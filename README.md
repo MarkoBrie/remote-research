@@ -48,3 +48,6 @@ git push -u origin main
 ```
 
 correction
+
+git log
+git rebase -i 4d32f6c~1
