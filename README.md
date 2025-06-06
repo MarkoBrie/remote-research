@@ -1,18 +1,48 @@
+```bash
 uv venv
 source .venv/bin/activate
-export ANTHROPIC_API_KEY='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'
+
 uv add arxiv mcp
 uv run mcp_chatbot.py
+```
+
+# Run the inspector
+```npx @modelcontextprotocol/inspector```
 
 
-# run the inspector
-npx @modelcontextprotocol/inspector
+# Git + Render 
 
+Render requires pip and cannot use uv so we translate uv requirements to pip ones.  
+We create a new github repository ```remote-research``` that is consumed by RENDER.
 
-# Git + Render
+```bash
+git init
+```
 
-```git init````
+```bash 
+echo ".venv" > .gitignore
+```
 
-```echo ".venv" > .gitignore```
+```bash 
+uv pip compile pyproject.toml > requirements.txt
+```
 
-```uv pip compile pyproject.toml > requirements.txt```
+```bash 
+echo "python-3.11.11" > runtime.txt
+```
+
+```bash 
+git add .
+```
+
+```bash
+git commit -m "ready for deployment"
+```
+
+### push an existing repository from the command line
+
+```bash
+git remote add origin https://github.com/MarkoBrie/remote-research.git
+git branch -M main
+git push -u origin main
+```
