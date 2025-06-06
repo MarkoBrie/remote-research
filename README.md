@@ -9,6 +9,7 @@ uv run mcp_chatbot.py
 # Run the inspector
 ```npx @modelcontextprotocol/inspector```
 
+npx @modelcontextprotocol/inspector uv run research_server.py
 
 # Git + Render 
 
